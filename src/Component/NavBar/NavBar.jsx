@@ -21,7 +21,8 @@ export default function BottomNav() {
         <li className="flex-1">
           <NavLink to="/" className={linkClasses}>
             <img
-              src="/src/assets/images/home.png"
+              // src="/src/assets/images/home.png"
+              src  = "src/assets/images/home.png"
               alt="Home"
               className="w-6 h-6 mb-1 sm:w-5 sm:h-5"
             />
