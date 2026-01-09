@@ -1,29 +1,31 @@
-import { useState } from "react";
 import likeImg from "/src/assets/images/LikeMeme.png";
-import likedImg from "/src/assets/images/LikedMeme.png"; // add this image
-function LikeButton() {
-  const [liked, setLiked] = useState(false);
+import likedImg from "/src/assets/images/LikedMeme.png";
+import { useMeme } from "../../FetchMemesAPI/MemeCOntext";
+
+function LikeButton({ meme }) {
+  const { toggleLike, isLiked } = useMeme();
+
+  // 🔥 USE postLink AS ID
+  const memeId = meme.postLink;
+
+  const liked = isLiked(memeId);
+
+  const memeData = {
+    id: memeId,
+    url: meme.url,
+    title: meme.title,
+    subreddit: meme.subreddit,
+  };
 
   return (
     <button
-      onClick={() => setLiked(!liked)}
-      className="
-        w-[50px] h-[50px]
-        flex items-center justify-center
-        select-none
-        transition-transform duration-200
-        hover:scale-110
-        active:scale-125
-      "
+      onClick={() => toggleLike(memeData)}
+      className="w-[50px] h-[50px] flex items-center justify-center"
     >
       <img
         src={liked ? likedImg : likeImg}
         alt="Like"
-        className={`
-          w-7 h-7
-          transition-all duration-300
-          ${liked ? "scale-125" : "scale-100"}
-        `}
+        className={`w-7 h-7 transition-all ${liked ? "scale-125" : ""}`}
         draggable={false}
       />
     </button>

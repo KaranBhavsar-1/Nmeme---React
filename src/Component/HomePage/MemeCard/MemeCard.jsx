@@ -11,7 +11,7 @@ export default function MemeCard({Meme,count,currentMemeNo}) {
         className="
           mt-2
           relative
-          w-[380px] h-[550px]
+          w-[380px] h-[520px]
           border-2 border-[#333]
           rounded-[10px]
           overflow-hidden
@@ -81,7 +81,7 @@ export default function MemeCard({Meme,count,currentMemeNo}) {
             flex flex-col gap-5 z-20
           "
         >
-          <LikeButton />
+          <LikeButton meme={Meme} />
           <DownloadButton />
         </div>
       </div>
