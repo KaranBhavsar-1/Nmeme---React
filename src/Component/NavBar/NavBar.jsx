@@ -1,6 +1,12 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 
+import homeIcon from "../../assets/images/home.png";
+import browseIcon from "../../assets/images/browse.png";
+import likeIcon from "../../assets/images/like.png";
+import settingIcon from "../../assets/images/setting.png";
+
+
 export default function BottomNav() {
   const linkClasses = ({ isActive }) =>
     `flex flex-col items-center justify-center flex-1 py-2 text-sm transition-colors
@@ -22,7 +28,8 @@ export default function BottomNav() {
           <NavLink to="/" className={linkClasses}>
             <img
               // src="/src/assets/images/home.png"
-              src  = "src/assets/images/home.png"
+              // src  = "src/assets/images/home.png"
+              src={homeIcon}
               alt="Home"
               className="w-6 h-6 mb-1 sm:w-5 sm:h-5"
             />
