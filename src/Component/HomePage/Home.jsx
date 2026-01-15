@@ -17,6 +17,14 @@ function Home() {
     setCurrentMemeNo,
   } = useMeme();
 
+  /* ✅ SET DEFAULT CATEGORY ON FIRST LOAD */
+  useEffect(() => {
+    if (!memeType) {
+      setMemeType("/catmemes");
+      localStorage.setItem("memeType", "/catmemes");
+    }
+  }, [memeType, setMemeType]);
+
   const memes = meme?.memes || [];
   const hasMemes = memes.length > 0;
 
