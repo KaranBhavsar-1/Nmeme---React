@@ -20,8 +20,8 @@ function Home() {
   /* ✅ SET DEFAULT CATEGORY ON FIRST LOAD */
   useEffect(() => {
     if (!memeType) {
-      setMemeType("/catmemes");
-      localStorage.setItem("memeType", "/catmemes");
+      setMemeType("catmemes");
+      localStorage.setItem("memeType", "catmemes");
     }
   }, [memeType, setMemeType]);
 
