@@ -46,7 +46,10 @@ export default function MemeCard({
   };
 
   return (
-    <div className="flex justify-center">
+    <div 
+    className="flex justify-center"
+    // className="w-full h-full relative flex flex-col"
+    >
       <div
         onDoubleClick={handleDoubleClick}
         className="
