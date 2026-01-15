@@ -13,19 +13,11 @@ function Home() {
   const {
     meme,
     fetchMeme,
-     memeType,        // ✅ ADD THIS
-  setMemeType, 
     currentMemeNo,
     setCurrentMemeNo,
   } = useMeme();
 
-  /* ✅ SET DEFAULT CATEGORY ON FIRST LOAD */
-  useEffect(() => {
-    if (!memetype) {
-      setMemeType("catmemes");
-      localStorage.setItem("memetype", "catmemes");
-    }
-  }, [memeType, setMemeType]);
+
 
   const memes = meme?.memes || [];
   const hasMemes = memes.length > 0;
@@ -63,6 +55,7 @@ function Home() {
     }
   }, [memes, currentMemeNo, hasMemes, setCurrentMemeNo]);
 
+  console.log("memetype" , localStorage.getItem("MemeType"))
   return (
     <div className="flex flex-col items-center p-4">
       <MemeCard
